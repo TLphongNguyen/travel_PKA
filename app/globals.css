@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
+  /* Glacier Design System - Light Mode (Defaults) */
   --background: #ffffff;
   --foreground: #171717;
+  
+  --glacier-primary: #7dd3fc;
+  --glacier-bg: #0a0e1a;
+  --glacier-on-surface: #e0e8f0;
+  --glacier-on-surface-variant: #a0b4c4;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-glacier-primary: var(--glacier-primary);
+  --color-glacier-bg: var(--glacier-bg);
+  --font-inter: "Inter", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0e1a;
+    --foreground: #e0e8f0;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter);
 }
+
+/* Glassmorphism Utility */
+.glacier-glass {
+  background: rgba(15, 21, 36, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(125, 211, 252, 0.1);
+  box-shadow: 0 0 30px rgba(125, 211, 252, 0.05);
+}
+
+.glacier-glow {
+  box-shadow: 0 0 20px rgba(125, 211, 252, 0.2);
+}
+
+.glacier-text-glow {
+  text-shadow: 0 0 15px rgba(125, 211, 252, 0.4);
+}
+
